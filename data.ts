@@ -32,3 +32,8 @@ export function updateTodo(id: number, text: string) {
     todo.text = text;
     return todo;
 };
+
+export function removeTodo(id: number) {
+    TODOS = TODOS.filter(t => t.id !== id);
+    return TODOS;
+};
