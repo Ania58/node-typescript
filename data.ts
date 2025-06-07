@@ -9,6 +9,15 @@ export function getTodos() {
     return TODOS;
 };
 
+export function getTodo(id: number) {
+    const todo = TODOS.find(t => t.id === id);
+
+    if (!todo) {
+        throw new Error ('Todo not found');
+    };
+    return todo;
+}
+
 export function addTodo(text: string) {
     const newTodo = {
         id: Math.random(),
