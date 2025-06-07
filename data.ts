@@ -26,3 +26,9 @@ export function addTodo(text: string) {
     TODOS.push(newTodo);
     return newTodo;
 };
+
+export function updateTodo(id: number, text: string) {
+    const todo = getTodo(id);
+    todo.text = text;
+    return todo;
+};
