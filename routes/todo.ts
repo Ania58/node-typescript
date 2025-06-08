@@ -19,6 +19,11 @@ router.post('todos', (req, res) => {
     res.status(201).json( { message: 'Todo added', todo: addedTodo } );
 });
 
+router.patch('todos/:id', (req, res) => {
+    const updatedTodo = updateTodo(+req.params.id, req.body.text);
+    res.status(200).json( { message: 'Todo updated', todo: updatedTodo } );
+});
+
 
 
 export default router;
