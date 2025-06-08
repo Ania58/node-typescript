@@ -5,12 +5,18 @@ const router = express.Router();
 
 router.get('/todos', (req, res) => {
     const todos = getTodos();
-    res.json( { todos } );
+    res.status(200).json( { todos } );
 });
 
 router.get('todos/:id', (req, res) => {
     const todo = getTodo(+req.params.id);
-    res.json( { todo } );
+    res.status(200).json( { todo } );
+});
+
+router.post('todos', (req, res) => {
+    const text = req.body.text;
+    const addedTodo = addTodo(text);
+    res.status(201).json( { message: 'Todo added', todo: addedTodo } );
 });
 
 
