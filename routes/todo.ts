@@ -8,6 +8,11 @@ router.get('/todos', (req, res) => {
     res.json( { todos } );
 });
 
+router.get('todos/:id', (req, res) => {
+    const todo = getTodo(+req.params.id);
+    res.json( { todo } );
+});
+
 
 
 export default router;
