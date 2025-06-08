@@ -24,6 +24,11 @@ router.patch('todos/:id', (req, res) => {
     res.status(200).json( { message: 'Todo updated', todo: updatedTodo } );
 });
 
+router.delete('todos/:id', (req, res) => {
+    removeTodo(+req.params.id);
+    res.status(200).json( { message: 'Todo deleted' } );
+});
+
 
 
 export default router;
